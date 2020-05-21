@@ -22,7 +22,7 @@
             android:text="아이디" />
 
         <EditText
-            android:id="@+id/textId"
+            android:id="@+id/idEdt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:singleLine="true"
@@ -37,7 +37,7 @@
             android:text="비밀번호" />
 
         <EditText
-            android:id="@+id/textPw"
+            android:id="@+id/pwEdt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:singleLine="true"
@@ -51,7 +51,7 @@
             android:layout_weight="1" />
 
         <Button
-            android:id="@+id/btn"
+            android:id="@+id/loginBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="로그인"/>
