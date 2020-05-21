@@ -3,10 +3,15 @@ package com.example.javabasicpractice_20200520;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
+import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
 
 import com.example.javabasicpractice_20200520.databinding.ActivityMainBinding;
+
+import org.w3c.dom.Text;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -17,9 +22,25 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this,R.layout.activity_main);
 
-        binding.btn.setOnClickListener(new View.OnClickListener() {
+        binding.loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                String inputId = binding.idEdt.getText().toString();
+                String inputPw = binding.pwEdt.getText().toString();
+
+                Log.d("입력아이디", inputId);
+                Log.d("입력비번", inputPw);
+
+//                안드로이드 SDK에서의 String 비교는 == 이 동작하지 않는다.
+//                이클립스에서는 가능했었지만 여기선 안됨.
+//                .equals로 비교하자.
+                if (inputId.equals("admin") && inputPw.equals("qwer")) {
+                    Toast.makeText(MainActivity.this, "관리자입니다.", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    Toast.makeText(MainActivity.this, "로그인에 실패했습니다.", Toast.LENGTH_SHORT).show();
+                }
 
             }
         });
